@@ -98,7 +98,7 @@ function App() {
                                             </button>
                                         ) : null}
                                         {editing ? null : (
-                                            <div className="flex justify-end">
+                                            <div className="flex gap-2">
                                                 <button
                                                     onClick={handleDeleteTodo}
                                                     className="button button-primary"
