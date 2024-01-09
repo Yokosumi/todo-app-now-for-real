@@ -57,6 +57,7 @@ function App() {
                     <div className="flex gap-3">
                         <input
                             onChange={(e) => setNewTodo(e.target.value)}
+                            value={newTodo}
                             className="border p-2 w-full"
                             type="text"
                             placeholder="Add todo"
