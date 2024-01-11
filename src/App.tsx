@@ -5,6 +5,7 @@ import { EditTodoButton } from './components/EditTodoButton'
 import { CheckBox } from './components/CheckBox'
 import { TodoListType, TodoType, EditingType, editTodoIndexType } from './types'
 import { FaSave } from 'react-icons/fa'
+import { EditTodoInput } from './components/EditTodoInput'
 
 // DOING: outsourcing the todo list to seperate components
 // TODO: add IDs to todos
@@ -75,10 +76,10 @@ function App() {
                                     >
                                         {' '}
                                         {editing && editIndex === index ? (
-                                            <input
+                                            <EditTodoInput
                                                 type="text"
-                                                value={editTodo}
-                                                onChange={(e) =>
+                                                inputValue={editTodo}
+                                                editEvent={(e) =>
                                                     setEditTodo(e.target.value)
                                                 }
                                             />
