@@ -4,14 +4,13 @@ import { IoIosAdd } from 'react-icons/io'
 import { MdEdit } from 'react-icons/md'
 import { FaSave } from 'react-icons/fa'
 import { CheckBox } from './components/CheckBox'
-
-//TODO: make a working edit function
-
-type TodoListType = string[]
-type NewTodoType = string
-type EditingType = boolean
-type editTodoType = string
-type editTodoIndexType = number | null
+import {
+    TodoListType,
+    NewTodoType,
+    EditingType,
+    editTodoType,
+    editTodoIndexType,
+} from './types'
 
 function App() {
     const [todos, setTodos] = useState([] as TodoListType)
