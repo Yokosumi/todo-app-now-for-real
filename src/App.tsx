@@ -12,6 +12,8 @@ import {
     editTodoIndexType,
 } from './types'
 
+// DOING: outsourcing the todo list to seperate components
+
 function App() {
     const [todos, setTodos] = useState([] as TodoListType)
     const [newTodo, setNewTodo] = useState('' as NewTodoType)
