@@ -3,6 +3,7 @@ import { MdDelete } from 'react-icons/md'
 import { IoIosAdd } from 'react-icons/io'
 import { MdEdit } from 'react-icons/md'
 import { FaSave } from 'react-icons/fa'
+import { CheckBox } from './components/CheckBox'
 
 //TODO: make a working edit function
 
@@ -113,6 +114,7 @@ function App() {
                                                 >
                                                     <MdEdit />
                                                 </button>
+                                                <CheckBox />
                                             </div>
                                         )}
                                     </div>
