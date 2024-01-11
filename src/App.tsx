@@ -1,62 +1,33 @@
-import { useState } from 'react'
+import { useTodoHandlers } from './handlers'
 import { AddTodo } from './components/AddTodo'
 import { DeleteTodoButton } from './components/DeleteTodoButton'
 import { EditTodoButton } from './components/EditTodoButton'
 import { CheckBox } from './components/CheckBox'
-import { TodoListType, TodoType, EditingType, editTodoIndexType } from './types'
 import { UpdateTodoButton } from './components/UpdateTodoButton'
 import { EditTodoInput } from './components/EditTodoInput'
 
-// DOING: outsourcing the todo list to seperate components
-// TODO: add IDs to todos
+// DOING: add IDs to todos
 // TODO: handleFunctions in seperate file
 // TODO: revert edit change functionality
-// AddTodo: done
-// CheckBox: done
-// DeleteTodo: done
-// EditTodo: done
-// TodoListLayout: paused
 
 function App() {
-    const [todos, setTodos] = useState([] as TodoListType)
-    const [newTodo, setNewTodo] = useState('' as TodoType)
-    const [editing, setEditing] = useState(false as EditingType)
-    const [editTodo, setEditTodo] = useState('' as TodoType)
-    const [editIndex, setEditIndex] = useState(null as editTodoIndexType)
-
-    const handleAddTodo = () => {
-        if (newTodo !== '') {
-            setTodos([...todos, newTodo])
-            setNewTodo('')
-        }
-    }
-
-    const handleDeleteTodo = (index: number) => {
-        const newTodos = [...todos]
-        newTodos.splice(index, 1)
-        setTodos(newTodos)
-    }
-
-    const handleEditTodo = (index: number) => {
-        setEditing(true) // sets to editing mode
-        setEditIndex(index) // Sets the index of the todo to be edited
-        setEditTodo(todos[index]) // holds the new text of the todo
-    }
-
-    const handleUpdateTodo = () => {
-        if (editTodo !== '' && editIndex !== null) {
-            const newTodos = [...todos]
-            newTodos[editIndex] = editTodo // puts the chosen todo via index in the editTodo state
-            setTodos(newTodos) // sets the new todo list
-            setEditing(false) // sets editing mode to false
-            setEditIndex(null) // sets the edit index to null so it can be used again
-            setEditTodo('') // sets the edit todo to empty string so it can be used again
-        }
-    }
+    const {
+        todos,
+        newTodo,
+        handleAddTodo,
+        handleDeleteTodo,
+        handleEditTodo,
+        handleUpdateTodo,
+        setNewTodo,
+        editing,
+        editTodo,
+        setEditTodo,
+        editIndex,
+    } = useTodoHandlers()
 
     return (
         <>
-            <div className="flex flex-col items-center justify-center min-h-screen ">
+            <div className="flex flex-col items-center justify-center min-h-screen p-4">
                 <div className="p-4 bg-white rounded shadow-md w-64">
                     <h1 className="text-2xl font-bold mb-4">Todo List</h1>
                     <div className="flex gap-3">
@@ -85,7 +56,7 @@ function App() {
                                                 }
                                             />
                                         ) : (
-                                            <p>{todo}</p>
+                                            <p key={index}>{todo}</p>
                                         )}
                                         {editing && editIndex === index ? (
                                             <UpdateTodoButton
