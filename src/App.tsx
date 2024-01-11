@@ -12,8 +12,8 @@ import { FaSave } from 'react-icons/fa'
 // TODO: revert edit change functionality
 // AddTodo: done
 // CheckBox: done
-// DeleteTodo: done-ish (there is still a typescript issue with the index being number | any)
-// EditTodo: working on it
+// DeleteTodo: done
+// EditTodo: done
 
 function App() {
     const [todos, setTodos] = useState([] as TodoListType)
