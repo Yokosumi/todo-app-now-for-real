@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { MdDelete } from 'react-icons/md'
+
 import { MdEdit } from 'react-icons/md'
 import { FaSave } from 'react-icons/fa'
 import { AddTodo } from './components/AddTodo'
+import { DeleteTodoButton } from './components/DeleteTodoButton'
 import { CheckBox } from './components/CheckBox'
 import {
     TodoListType,
@@ -13,6 +14,10 @@ import {
 } from './types'
 
 // DOING: outsourcing the todo list to seperate components
+// TODO: handleFunctions in seperate file
+// AddTodo: done
+// CheckBox: done
+// DeleteTodo: wait
 
 function App() {
     const [todos, setTodos] = useState([] as TodoListType)
@@ -94,12 +99,9 @@ function App() {
                                         ) : null}
                                         {editing ? null : (
                                             <div className="flex gap-2">
-                                                <button
+                                                <DeleteTodoButton
                                                     onClick={handleDeleteTodo}
-                                                    className="button button-primary"
-                                                >
-                                                    <MdDelete />
-                                                </button>
+                                                />
                                                 <button
                                                     onClick={() =>
                                                         handleEditTodo(index)
