@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { MdDelete } from 'react-icons/md'
-import { IoIosAdd } from 'react-icons/io'
 import { MdEdit } from 'react-icons/md'
 import { FaSave } from 'react-icons/fa'
+import { AddTodo } from './components/AddTodo'
 import { CheckBox } from './components/CheckBox'
 import {
     TodoListType,
@@ -57,19 +57,11 @@ function App() {
                 <div className="p-4 bg-white rounded shadow-md w-64">
                     <h1 className="text-2xl font-bold mb-4">Todo List</h1>
                     <div className="flex gap-3">
-                        <input
+                        <AddTodo
                             onChange={(e) => setNewTodo(e.target.value)}
                             value={newTodo}
-                            className="border p-2 w-full"
-                            type="text"
-                            placeholder="Add todo"
-                        />
-                        <button
                             onClick={handleAddTodo}
-                            className="button button-primary"
-                        >
-                            <IoIosAdd className="text-3xl text-black" />
-                        </button>
+                        />
                     </div>
                     <div className="mt-4">
                         <h2 className="font-bold mb-2">Todos:</h2>
