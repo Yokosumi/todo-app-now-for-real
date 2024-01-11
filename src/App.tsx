@@ -7,8 +7,7 @@ import { UpdateTodoButton } from './components/UpdateTodoButton'
 import { EditTodoInput } from './components/EditTodoInput'
 
 // TODO: refactor todos so they are objects with id and text and checked properties
-// TODO: handleFunctions in seperate file
-// TODO: revert edit change functionality
+// TODO: add revert edit change functionality
 
 function App() {
     const {
