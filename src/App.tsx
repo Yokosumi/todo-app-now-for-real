@@ -4,7 +4,7 @@ import { DeleteTodoButton } from './components/DeleteTodoButton'
 import { EditTodoButton } from './components/EditTodoButton'
 import { CheckBox } from './components/CheckBox'
 import { TodoListType, TodoType, EditingType, editTodoIndexType } from './types'
-import { FaSave } from 'react-icons/fa'
+import { UpdateTodoButton } from './components/UpdateTodoButton'
 import { EditTodoInput } from './components/EditTodoInput'
 
 // DOING: outsourcing the todo list to seperate components
@@ -15,6 +15,7 @@ import { EditTodoInput } from './components/EditTodoInput'
 // CheckBox: done
 // DeleteTodo: done
 // EditTodo: done
+// TodoListLayout: paused
 
 function App() {
     const [todos, setTodos] = useState([] as TodoListType)
@@ -87,12 +88,9 @@ function App() {
                                             <p>{todo}</p>
                                         )}
                                         {editing && editIndex === index ? (
-                                            <button
-                                                onClick={handleUpdateTodo}
-                                                className="button button-primary"
-                                            >
-                                                <FaSave />
-                                            </button>
+                                            <UpdateTodoButton
+                                                updateEvent={handleUpdateTodo}
+                                            />
                                         ) : null}
                                         {editing ? null : (
                                             <div className="flex gap-2">
