@@ -1,29 +1,25 @@
 import { useState } from 'react'
-
-import { MdEdit } from 'react-icons/md'
-import { FaSave } from 'react-icons/fa'
 import { AddTodo } from './components/AddTodo'
 import { DeleteTodoButton } from './components/DeleteTodoButton'
+import { EditTodoButton } from './components/EditTodoButton'
 import { CheckBox } from './components/CheckBox'
-import {
-    TodoListType,
-    NewTodoType,
-    EditingType,
-    editTodoType,
-    editTodoIndexType,
-} from './types'
+import { TodoListType, TodoType, EditingType, editTodoIndexType } from './types'
+import { FaSave } from 'react-icons/fa'
 
 // DOING: outsourcing the todo list to seperate components
+// TODO: add IDs to todos
 // TODO: handleFunctions in seperate file
+// TODO: revert edit change functionality
 // AddTodo: done
 // CheckBox: done
-// DeleteTodo: wait
+// DeleteTodo: done-ish (there is still a typescript issue with the index being number | any)
+// EditTodo: working on it
 
 function App() {
     const [todos, setTodos] = useState([] as TodoListType)
-    const [newTodo, setNewTodo] = useState('' as NewTodoType)
+    const [newTodo, setNewTodo] = useState('' as TodoType)
     const [editing, setEditing] = useState(false as EditingType)
-    const [editTodo, setEditTodo] = useState('' as editTodoType)
+    const [editTodo, setEditTodo] = useState('' as TodoType)
     const [editIndex, setEditIndex] = useState(null as editTodoIndexType)
 
     const handleAddTodo = () => {
@@ -33,7 +29,7 @@ function App() {
         }
     }
 
-    const handleDeleteTodo = (index: number | any) => {
+    const handleDeleteTodo = (index: number) => {
         const newTodos = [...todos]
         newTodos.splice(index, 1)
         setTodos(newTodos)
@@ -100,15 +96,15 @@ function App() {
                                         {editing ? null : (
                                             <div className="flex gap-2">
                                                 <DeleteTodoButton
-                                                    onClick={handleDeleteTodo}
+                                                    deleteEvent={() =>
+                                                        handleDeleteTodo(index)
+                                                    }
                                                 />
-                                                <button
-                                                    onClick={() =>
+                                                <EditTodoButton
+                                                    editEvent={() =>
                                                         handleEditTodo(index)
                                                     }
-                                                >
-                                                    <MdEdit />
-                                                </button>
+                                                />
                                                 <CheckBox />
                                             </div>
                                         )}
