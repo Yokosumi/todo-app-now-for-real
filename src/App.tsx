@@ -6,7 +6,7 @@ import { CheckBox } from './components/CheckBox'
 import { UpdateTodoButton } from './components/UpdateTodoButton'
 import { EditTodoInput } from './components/EditTodoInput'
 
-// DOING: add IDs to todos
+// TODO: refactor todos so they are objects with id and text and checked properties
 // TODO: handleFunctions in seperate file
 // TODO: revert edit change functionality
 
