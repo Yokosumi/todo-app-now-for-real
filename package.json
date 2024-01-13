@@ -4,7 +4,7 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "vite --open",
+        "dev": "conc \"npm run api\" \"npm run frontend\"",
         "frontend": "vite --port 4101 --open",
         "api": "npx tsx backend/api/index.ts",
         "build": "tsc && vite build",
