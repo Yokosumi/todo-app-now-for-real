@@ -8,7 +8,7 @@ export const UpdateTodoButton = ({ updateEvent }: props) => {
     return (
         <>
             <button onClick={updateEvent} className="button button-primary">
-                <FaSave />
+                <FaSave className="m-1 hover:text-green-500" />
             </button>
         </>
     )

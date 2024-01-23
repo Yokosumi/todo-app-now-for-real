@@ -8,7 +8,8 @@ export const EditTodoInput = ({ type, inputValue, editEvent }: props) => {
     return (
         <>
             <input
-                className="bg-white text-black"
+                className="bg-white text-black w-full"
+                autoFocus={true}
                 type={type}
                 value={inputValue}
                 onChange={editEvent}
