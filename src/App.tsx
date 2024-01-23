@@ -58,9 +58,15 @@ function App() {
                                             }
                                         />
                                     ) : (
-                                        <p className="text-black" key={index}>
-                                            {todo}
-                                        </p>
+                                        <div className="flex gap-2 text-lg">
+                                            <CheckBox />
+                                            <p
+                                                className="text-black"
+                                                key={index}
+                                            >
+                                                {todo}
+                                            </p>
+                                        </div>
                                     )}
                                     {editing && editIndex === index ? (
                                         <UpdateTodoButton
@@ -79,7 +85,6 @@ function App() {
                                                     handleEditTodo(index)
                                                 }
                                             />
-                                            <CheckBox />
                                         </div>
                                     )}
                                 </div>

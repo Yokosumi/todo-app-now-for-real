@@ -10,7 +10,7 @@ export const AddTodo = ({ onChange, value, onClick }: props) => {
     return (
         <>
             <input
-                className="bg-white p-2 w-full"
+                className="bg-white p-2 w-full text-black"
                 onChange={onChange}
                 value={value}
                 type="text"
