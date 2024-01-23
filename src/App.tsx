@@ -27,8 +27,8 @@ function App() {
     return (
         <>
             <div className="flex flex-col items-center justify-center min-h-screen p-4">
-                <div className="w-[80vh] h-[70vh] p-4 bg-white rounded shadow-md">
-                    <h1 className="text-4xl text-center font-bold font-inter mb-4">
+                <div className="w-[80vh] h-[70vh] p-4 bg-indigo-600 rounded shadow-md">
+                    <h1 className="text-4xl text-center font-bold font-inter mb-4 text-white">
                         Todo List
                     </h1>
                     <div className="flex gap-3">
@@ -39,7 +39,9 @@ function App() {
                         />
                     </div>
                     <div className="mt-4">
-                        <h2 className="font-bold mb-2">Todos:</h2>
+                        <h2 className="font-bold mb-2 text-2xl text-white">
+                            Todos:
+                        </h2>
                         <ul>
                             {todos.map((todo, index) => (
                                 <div
