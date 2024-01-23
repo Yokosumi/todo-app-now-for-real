@@ -27,8 +27,10 @@ function App() {
     return (
         <>
             <div className="flex flex-col items-center justify-center min-h-screen p-4">
-                <div className="p-4 bg-white rounded shadow-md w-64">
-                    <h1 className="text-2xl font-bold mb-4">Todo List</h1>
+                <div className="w-[80vh] h-[70vh] p-4 bg-white rounded shadow-md">
+                    <h1 className="text-4xl text-center font-bold font-inter mb-4">
+                        Todo List
+                    </h1>
                     <div className="flex gap-3">
                         <AddTodo
                             onChange={(e) => setNewTodo(e.target.value)}
