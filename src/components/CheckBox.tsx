@@ -11,9 +11,9 @@ export const CheckBox = () => {
                     <div className="flex items-center">
                         <button onClick={() => setIsChecked(!IsChecked)}>
                             {IsChecked ? (
-                                <ImCheckboxChecked />
+                                <ImCheckboxChecked className="text-green-500" />
                             ) : (
-                                <ImCheckboxUnchecked />
+                                <ImCheckboxUnchecked className="text-gray-300 hover:text-gray-500" />
                             )}
                         </button>
                     </div>

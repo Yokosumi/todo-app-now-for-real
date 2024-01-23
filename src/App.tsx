@@ -46,7 +46,7 @@ function App() {
                             {todos.map((todo, index) => (
                                 <div
                                     key={index}
-                                    className="flex justify-between gap-1 border p-2 mb-2"
+                                    className="flex justify-between gap-1 bg-white rounded-md p-2 mb-2"
                                 >
                                     {' '}
                                     {editing && editIndex === index ? (
@@ -58,7 +58,9 @@ function App() {
                                             }
                                         />
                                     ) : (
-                                        <p key={index}>{todo}</p>
+                                        <p className="text-black" key={index}>
+                                            {todo}
+                                        </p>
                                     )}
                                     {editing && editIndex === index ? (
                                         <UpdateTodoButton

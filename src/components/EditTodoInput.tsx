@@ -7,7 +7,12 @@ type props = {
 export const EditTodoInput = ({ type, inputValue, editEvent }: props) => {
     return (
         <>
-            <input type={type} value={inputValue} onChange={editEvent} />
+            <input
+                className="bg-white text-black"
+                type={type}
+                value={inputValue}
+                onChange={editEvent}
+            />
         </>
     )
 }
