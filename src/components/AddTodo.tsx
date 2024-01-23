@@ -10,14 +10,14 @@ export const AddTodo = ({ onChange, value, onClick }: props) => {
     return (
         <>
             <input
+                className="bg-black p-2 w-full"
                 onChange={onChange}
                 value={value}
-                className="border p-2 w-full"
                 type="text"
-                placeholder="Add todo"
+                placeholder="Add Todo"
             />
             <button onClick={onClick} className="button button-primary">
-                <IoIosAdd className="text-3xl text-black" />
+                <IoIosAdd className="text-3xl text-white" />
             </button>
         </>
     )
