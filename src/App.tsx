@@ -36,6 +36,7 @@ function App() {
                             onChange={(e) => setNewTodo(e.target.value)}
                             value={newTodo}
                             onClick={handleAddTodo}
+                            length={42}
                         />
                     </div>
                     <div className="mt-4">
@@ -52,6 +53,7 @@ function App() {
                                     {editing && editIndex === index ? (
                                         <EditTodoInput
                                             type="text"
+                                            length={42}
                                             inputValue={editTodo}
                                             editEvent={(e) =>
                                                 setEditTodo(e.target.value)
@@ -61,7 +63,11 @@ function App() {
                                         <div className="flex gap-2 text-lg">
                                             <CheckBox />
                                             <p
+
                                                 className="py-2 px-10 text-black  overflow-auto break-words max-w-[12rem] md:max-w-[18rem]  lg:max-w-[20rem]"
+
+                                                
+
                                                 key={index}
                                             >
                                                 {todo}

@@ -4,15 +4,17 @@ type props = {
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
     value: string
     onClick: () => void
+    length: number
 }
 
-export const AddTodo = ({ onChange, value, onClick }: props) => {
+export const AddTodo = ({ onChange, value, onClick, length }: props) => {
     return (
         <>
             <input
                 className="bg-white p-2 w-full text-black"
                 onChange={onChange}
                 value={value}
+                maxLength={length}
                 type="text"
                 placeholder="Add Todo"
             />
