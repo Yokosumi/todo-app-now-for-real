@@ -61,7 +61,7 @@ function App() {
                                         <div className="flex gap-2 text-lg">
                                             <CheckBox />
                                             <p
-                                                className="text-black"
+                                                className="py-2 px-10 text-black  overflow-auto break-words max-w-[12rem] md:max-w-[18rem]  lg:max-w-[20rem]"
                                                 key={index}
                                             >
                                                 {todo}
