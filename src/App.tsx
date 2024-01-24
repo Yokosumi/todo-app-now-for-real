@@ -27,7 +27,7 @@ function App() {
     return (
         <>
             <div className="flex flex-col items-center justify-center min-h-screen p-4">
-                <div className="flex-1 w-[80vh] min-h-[70vh] p-4 bg-indigo-600 rounded shadow-md">
+                <div className="flex-1 w-[40vh] min-h-[35vh] md:w-[52vh] lg:w-[72] p-4 bg-indigo-600 rounded shadow-md">
                     <h1 className="text-4xl text-center font-bold font-inter mb-4 text-white">
                         Todo List
                     </h1>
