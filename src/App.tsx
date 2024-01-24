@@ -5,6 +5,7 @@ import { EditTodoButton } from './components/EditTodoButton'
 import { CheckBox } from './components/CheckBox'
 import { UpdateTodoButton } from './components/UpdateTodoButton'
 import { EditTodoInput } from './components/EditTodoInput'
+import { ClearTodoListButton } from './components/ClearTodoListButton'
 
 // TODO: refactor todos so they are objects with id and text and checked properties
 // TODO: add revert edit change functionality
@@ -38,6 +39,7 @@ function App() {
                             onClick={handleAddTodo}
                             onKeydown={handleAddTodo}
                         />
+                        <ClearTodoListButton />
                     </div>
                     <div className="mt-4">
                         <h2 className="font-bold mb-2 text-2xl text-white">
