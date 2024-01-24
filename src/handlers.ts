@@ -38,12 +38,17 @@ export const useTodoHandlers = () => {
         }
     }
 
+    const handleClearTodos = () => {
+        setTodos([])
+    }
+
     return {
         todos,
         newTodo,
         handleAddTodo,
         handleDeleteTodo,
         handleEditTodo,
+        handleClearTodos,
         setNewTodo,
         handleUpdateTodo,
         editing,

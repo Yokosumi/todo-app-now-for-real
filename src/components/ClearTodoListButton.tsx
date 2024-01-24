@@ -1,9 +1,13 @@
 import { AiOutlineClear } from 'react-icons/ai'
 
-export const ClearTodoListButton = () => {
+type props = {
+    onClick: () => void
+}
+
+export const ClearTodoListButton = ({ onClick }: props) => {
     return (
         <>
-            <button>
+            <button onClick={onClick}>
                 <AiOutlineClear className="text-white text-lg" />
             </button>
         </>

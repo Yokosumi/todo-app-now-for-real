@@ -18,6 +18,7 @@ function App() {
         handleDeleteTodo,
         handleEditTodo,
         handleUpdateTodo,
+        handleClearTodos,
         setNewTodo,
         editing,
         editTodo,
@@ -39,7 +40,7 @@ function App() {
                             onClick={handleAddTodo}
                             onKeydown={handleAddTodo}
                         />
-                        <ClearTodoListButton />
+                        <ClearTodoListButton onClick={handleClearTodos} />
                     </div>
                     <div className="mt-4">
                         <h2 className="font-bold mb-2 text-2xl text-white">
