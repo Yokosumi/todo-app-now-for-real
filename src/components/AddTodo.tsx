@@ -4,9 +4,10 @@ type props = {
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
     value: string
     onClick: () => void
+    onKeydown: (e: React.KeyboardEvent<HTMLInputElement>) => void
 }
 
-export const AddTodo = ({ onChange, value, onClick }: props) => {
+export const AddTodo = ({ onChange, value, onClick, onKeydown }: props) => {
     return (
         <>
             <input
@@ -15,6 +16,11 @@ export const AddTodo = ({ onChange, value, onClick }: props) => {
                 value={value}
                 type="text"
                 placeholder="Add Todo"
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                        onKeydown(e)
+                    }
+                }}
             />
             <button onClick={onClick} className="button button-primary">
                 <IoIosAdd className="text-3xl text-white" />

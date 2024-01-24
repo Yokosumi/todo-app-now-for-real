@@ -36,6 +36,7 @@ function App() {
                             onChange={(e) => setNewTodo(e.target.value)}
                             value={newTodo}
                             onClick={handleAddTodo}
+                            onKeydown={handleAddTodo}
                         />
                     </div>
                     <div className="mt-4">
