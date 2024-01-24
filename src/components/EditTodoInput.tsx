@@ -2,15 +2,9 @@ type props = {
     type: string
     inputValue: string
     editEvent: React.ChangeEventHandler<HTMLInputElement>
-    length: number
 }
 
-export const EditTodoInput = ({
-    type,
-    inputValue,
-    editEvent,
-    length,
-}: props) => {
+export const EditTodoInput = ({ type, inputValue, editEvent }: props) => {
     return (
         <>
             <input
@@ -18,7 +12,6 @@ export const EditTodoInput = ({
                 autoFocus={true}
                 type={type}
                 value={inputValue}
-                maxLength={length}
                 onChange={editEvent}
             />
         </>
