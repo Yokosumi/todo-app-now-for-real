@@ -8,7 +8,7 @@
         "frontend": "vite --port 4101 --open",
         "api": "npx tsx backend/api/index.ts",
         "build": "tsc && vite build",
-        "start": "vite serve --host --port 3555",
+        "start": "vite serve --host --port 3550",
         "setup": "npm i && npm run build && pm2 start --name todo-app-now-for-real npm -- start --update-env --time && pm2 save",
         "deploy": "git pull --no-rebase && npm i && npm run build && pm2 restart todo-app-now-for-real --update-env --time && pm2 save",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
