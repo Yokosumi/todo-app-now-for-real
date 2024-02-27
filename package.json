@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "dev": "conc \"npm run api\" \"npm run frontend\"",
-        "frontend": "vite --port 4101 --open",
+        "frontend": "vite --port 3550 --open",
         "api": "npx tsx backend/api/index.ts",
         "build": "tsc && vite build",
         "start": "vite serve --host --port 3550",
