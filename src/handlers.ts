@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { TodoListType, TodoType, EditingType, editTodoIndexType } from './types'
+import { useLocalStorage } from './hooks'
 
 export const useTodoHandlers = () => {
-    const [todos, setTodos] = useState([] as TodoListType)
+    const [todos, setTodos] = useLocalStorage('todos', [] as TodoListType)
     const [newTodo, setNewTodo] = useState('' as TodoType)
     const [editing, setEditing] = useState(false as EditingType)
     const [editTodo, setEditTodo] = useState('' as TodoType)
