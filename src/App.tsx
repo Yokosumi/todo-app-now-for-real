@@ -60,6 +60,7 @@ function App() {
                                             editEvent={(e) =>
                                                 setEditTodo(e.target.value)
                                             }
+                                            onKeyDown={handleUpdateTodo}
                                         />
                                     ) : (
                                         <div className="flex gap-2 text-lg">

@@ -2,9 +2,15 @@ type props = {
     type: string
     inputValue: string
     editEvent: React.ChangeEventHandler<HTMLInputElement>
+    onKeyDown: React.KeyboardEventHandler<HTMLInputElement>
 }
 
-export const EditTodoInput = ({ type, inputValue, editEvent }: props) => {
+export const EditTodoInput = ({
+    type,
+    inputValue,
+    editEvent,
+    onKeyDown,
+}: props) => {
     return (
         <>
             <input
@@ -13,6 +19,11 @@ export const EditTodoInput = ({ type, inputValue, editEvent }: props) => {
                 type={type}
                 value={inputValue}
                 onChange={editEvent}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                        onKeyDown(e)
+                    }
+                }}
             />
         </>
     )
