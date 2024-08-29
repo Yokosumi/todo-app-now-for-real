@@ -14,7 +14,7 @@ export const EditTodoInput = ({
     return (
         <>
             <input
-                className="bg-white text-black text-lg w-full"
+                className="py-2 px-8 text-black  flex-grow overflow-auto break-words max-w-[12rem] md:max-w-[18rem]  lg:max-w-[20rem] focus:outline-none"
                 autoFocus={true}
                 type={type}
                 value={inputValue}
