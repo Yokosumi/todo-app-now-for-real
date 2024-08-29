@@ -76,7 +76,7 @@ function App() {
                                             updateEvent={handleUpdateTodo}
                                         />
                                     ) : null}
-                                    {editing ? null : (
+                                    {editing && editIndex === index ? null : (
                                         <div className="flex gap-2">
                                             <DeleteTodoButton
                                                 deleteEvent={() =>
