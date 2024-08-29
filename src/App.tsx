@@ -50,9 +50,10 @@ function App() {
                             {todos.map((todo, index) => (
                                 <div
                                     key={index}
-                                    className="flex justify-between gap-1 bg-white rounded-md p-2 mb-2"
+                                    className="flex justify-between gap-2 bg-white rounded-md p-2 mb-2"
                                 >
                                     {' '}
+                                    <CheckBox />
                                     {editing && editIndex === index ? (
                                         <EditTodoInput
                                             type="text"
@@ -63,15 +64,12 @@ function App() {
                                             onKeyDown={handleUpdateTodo}
                                         />
                                     ) : (
-                                        <div className="flex gap-2 text-lg">
-                                            <CheckBox />
-                                            <p
-                                                className="py-2 px-10 text-black  overflow-auto break-words max-w-[12rem] md:max-w-[18rem]  lg:max-w-[20rem]"
-                                                key={index}
-                                            >
-                                                {todo}
-                                            </p>
-                                        </div>
+                                        <p
+                                            className="py-2 px-10 text-black  flex-grow overflow-auto break-words max-w-[12rem] md:max-w-[18rem]  lg:max-w-[20rem]"
+                                            key={index}
+                                        >
+                                            {todo}
+                                        </p>
                                     )}
                                     {editing && editIndex === index ? (
                                         <UpdateTodoButton
